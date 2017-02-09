@@ -7,7 +7,9 @@ import {Component} from '@angular/core';
     <li>FPT</li>
     <li>UTEHY</li>
     </ul>
-    `
+    <h4>X1jfslf</h4>
+    `,
+    styles:['h4 {color:red;}']
 })
 
 export class MenuClassComponent{

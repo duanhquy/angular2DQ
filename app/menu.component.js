@@ -14,7 +14,8 @@ var MenuClassComponent = (function () {
 MenuClassComponent = __decorate([
     core_1.Component({
         selector: 'my-menu',
-        template: "<ul>\n    <li>Du Anh Quy<li>\n    <li>FPT</li>\n    <li>UTEHY</li>\n    </ul>\n    "
+        template: "<ul>\n    <li>Du Anh Quy<li>\n    <li>FPT</li>\n    <li>UTEHY</li>\n    </ul>\n    <h4>X1jfslf</h4>\n    ",
+        styles: ['h4 {color:red;}']
     })
 ], MenuClassComponent);
 exports.MenuClassComponent = MenuClassComponent;
