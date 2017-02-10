@@ -11,12 +11,15 @@ var MenuClassComponent = (function () {
         this.applyClass = true;
         this.blueColor = false;
     }
+    MenuClassComponent.prototype.OnClick = function (value) {
+        console.log(value);
+    };
     return MenuClassComponent;
 }());
 MenuClassComponent = __decorate([
     core_1.Component({
         selector: 'my-menu',
-        template: "\n    <h1>This is my menu</h1>\n    <h3 [class.redColor]=\"applyClass\">Apply Class</h3>\n    <h4 [style.color]=\"blueColor?'blue':'orange'\">Apply Style</h4>\n    ",
+        template: "\n    <h1>This is my menu</h1>  \n    <button (click)=\"OnClick(name.value)\">Click Me</button>\n    <input #name type=\"text\"/>\n    ",
         styles: [".redColor{\n            color:red;\n        }"]
     })
 ], MenuClassComponent);

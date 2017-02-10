@@ -3,9 +3,9 @@ import {Component} from '@angular/core';
 @Component({
     selector:'my-menu',
     template:`
-    <h1>This is my menu</h1>
-    <h3 [class.redColor]="applyClass">Apply Class</h3>
-    <h4 [style.color]="blueColor?'blue':'orange'">Apply Style</h4>
+    <h1>This is my menu</h1>  
+    <button (click)="OnClick(name.value)">Click Me</button>
+    <input #name type="text"/>
     `,
     styles:[`.redColor{
             color:red;
@@ -15,5 +15,7 @@ import {Component} from '@angular/core';
 export class MenuClassComponent{
     public applyClass = true;
     public blueColor = false;
-
+    OnClick(value){
+        console.log(value);
+    }
 }
