@@ -19,7 +19,7 @@ var MenuClassComponent = (function () {
 MenuClassComponent = __decorate([
     core_1.Component({
         selector: 'my-menu',
-        template: "\n    <h1>This is my menu</h1>  \n    <button (click)=\"OnClick(name.value)\">Click Me</button>\n    <input #name type=\"text\"/>\n    ",
+        template: "\n    <h1>This is my menu</h1>  \n    <input type=\"text\" [(ngModel)] = \"fname\"/>\n    <input type=\"text\" [(ngModel)] = \"lname\"/>\n    <br/>\n    Full name : {{fname}} {{lname}}\n    ",
         styles: [".redColor{\n            color:red;\n        }"]
     })
 ], MenuClassComponent);

@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
-
+import { FormsModule }   from '@angular/forms';
 @Component({
     selector:'my-menu',
     template:`
     <h1>This is my menu</h1>  
-    <button (click)="OnClick(name.value)">Click Me</button>
-    <input #name type="text"/>
+    <input type="text" [(ngModel)] = "fname"/>
+    <input type="text" [(ngModel)] = "lname"/>
+    <br/>
+    Full name : {{fname}} {{lname}}
     `,
     styles:[`.redColor{
             color:red;
