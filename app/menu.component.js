@@ -8,16 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var MenuClassComponent = (function () {
     function MenuClassComponent() {
-        this.showLineIf = true;
-        this.color = "red";
-        this.colors = ["Red", "Green", "Blue"];
+        this.cone = true;
+        this.ctwo = true;
+        this.style = 'italic';
+        this.size = "30px";
     }
+    MenuClassComponent.prototype.ToggleColor = function () {
+        this.cone = !this.cone;
+        this.ctwo = !this.ctwo;
+    };
     return MenuClassComponent;
 }());
 MenuClassComponent = __decorate([
     core_1.Component({
         selector: 'my-menu',
-        template: "\n    <h1>This is my menu</h1>  \n    <h3 *ngIf=\"showLineIf\">This is ngIf directive for</h3>\n    <div [ngSwitch]=\"color\">\n        <p *ngSwitchCase=\"'red'\">This is Red color</p>\n        <p *ngSwitchCase=\"'yellow'\">This is Yellow color</p>\n        <p *ngSwitchCase=\"'blue'\">This is Blue color</p>        \n        <p *ngSwitchDefault>Invalid color</p>    \n    </div>\n\n    <ul>\n        <li *ngFor=\"let color of colors\">{{color}}</li>\n    </ul>\n    "
+        template: "\n    <h1>This is my menu</h1>    \n    <p [ngClass] = \"{classOne:cone,classTwo:ctwo}\">This ngClass apply style</p>\n    <button (click)=\"ToggleColor()\">Thay doi mau sac</button>\n    <p [ngStyle]=\"{'font-style':style,'font-size':size}\">fskfslfhlfhsfhfa;</p>\n    ",
+        styles: [
+            "\n            .classOne{\n                color:black;       \n            }\n            .classTwo{\n                background-color:red;     \n            }\n        "
+        ]
     })
 ], MenuClassComponent);
 exports.MenuClassComponent = MenuClassComponent;

@@ -3,23 +3,30 @@ import { FormsModule }   from '@angular/forms';
 @Component({
     selector:'my-menu',
     template:`
-    <h1>This is my menu</h1>  
-    <h3 *ngIf="showLineIf">This is ngIf directive for</h3>
-    <div [ngSwitch]="color">
-        <p *ngSwitchCase="'red'">This is Red color</p>
-        <p *ngSwitchCase="'yellow'">This is Yellow color</p>
-        <p *ngSwitchCase="'blue'">This is Blue color</p>        
-        <p *ngSwitchDefault>Invalid color</p>    
-    </div>
-
-    <ul>
-        <li *ngFor="let color of colors">{{color}}</li>
-    </ul>
-    `   
+    <h1>This is my menu</h1>    
+    <p [ngClass] = "{classOne:cone,classTwo:ctwo}">This ngClass apply style</p>
+    <button (click)="ToggleColor()">Thay doi mau sac</button>
+    <p [ngStyle]="{'font-style':style,'font-size':size}">fskfslfhlfhsfhfa;</p>
+    `   ,
+    styles:[
+        `
+            .classOne{
+                color:black;       
+            }
+            .classTwo{
+                background-color:red;     
+            }
+        `
+    ]
 })
 
-export class MenuClassComponent{
-   public showLineIf = true;
-   public color = "red";
-   public colors = ["Red","Green","Blue"];
+export class MenuClassComponent{  
+    public cone  = true;
+    public ctwo = true;
+    public style = 'italic';
+    public size = "30px";
+    ToggleColor(){
+        this.cone = !this.cone;
+        this.ctwo = !this.ctwo;
+    }
 }
