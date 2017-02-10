@@ -9,6 +9,13 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "DAQ  Education Chanel";
+        this.cities = [{
+                Id: 1, Name: "Ha Noi"
+            }, {
+                Id: 2, Name: "TP. Ho Chi Minh"
+            }, {
+                Id: 3, Name: "Da Nang"
+            }];
     }
     AppComponent.prototype.onSubmit = function (value) {
         console.log(value);
