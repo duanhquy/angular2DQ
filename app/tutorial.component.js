@@ -5,16 +5,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require("@angular/core");
 var TutorialComponent = (function () {
     function TutorialComponent() {
+        this.title = "2017";
+        this.onVote = new core_1.EventEmitter();
+        this.voted = false;
     }
+    TutorialComponent.prototype.vote = function (agr) {
+        this.voted = true;
+        this.onVote.emit(agr);
+    };
+    TutorialComponent.prototype.setName = function (arg) {
+        this.name = arg;
+    };
     return TutorialComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], TutorialComponent.prototype, "name", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], TutorialComponent.prototype, "onVote", void 0);
 TutorialComponent = __decorate([
     core_1.Component({
         selector: 'my-tutorial',
-        template: "<h2>This TEDU Angular2 Tutorial component</h2>\n              <h4>Sub Component</h4>\n    "
+        template: "\n            <br/>              \n              <p>Child Component is: {{name}}</p>\n              <hr/>             \n              <button [disabled] = \"voted\" (click) = \"vote(true)\">\u0110\u1ED3ng \u00FD</button>\n              <button [disabled] = \"voted\" (click) = \"vote(false)\">Kh\u00F4ng \u0111\u1ED3ng \u00FD</button>\n              Result:{{voted}}\n    "
     })
 ], TutorialComponent);
 exports.TutorialComponent = TutorialComponent;
