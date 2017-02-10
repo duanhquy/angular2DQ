@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `
-  <h1>Hell Online Angular 2 with {{title | uppercase}}!</h1>    
-  <my-tutorial></my-tutorial>  
-  `
+  templateUrl: 'app/app.component.html'
 })
 export class AppComponent { 
 
   public title = "DAQ  Education Chanel";
   
+  onSubmit(value:any){
+    console.log(value);
+  }
 }

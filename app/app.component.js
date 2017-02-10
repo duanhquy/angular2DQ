@@ -10,12 +10,15 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = "DAQ  Education Chanel";
     }
+    AppComponent.prototype.onSubmit = function (value) {
+        console.log(value);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hell Online Angular 2 with {{title | uppercase}}!</h1>    \n  <my-tutorial></my-tutorial>  \n  "
+        templateUrl: 'app/app.component.html'
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
