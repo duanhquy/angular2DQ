@@ -8,13 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = "Master .NET";
+        //property binding
+        this.image = "http://lorempixel.com/300/300";
+        this.welcomText = "Hoc de phat trien ban than!";
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  <h1>Hell TEDU Online Angular 2!</h1>\n  <h4>App Main Component</h4>\n  <my-tutorial></my-tutorial>\n  <my-menu>Menu o day</my-menu>\n  ",
+        template: "\n  <h1>Hell Online Angular 2 with {{title}}!</h1>\n  <my-menu></my-menu>\n  <img [src]=\"image\"/>\n  <input type=\"text\" [value] = \"welcomText\"/>\n  ",
         styles: ['h4 {color:blue;}']
     })
 ], AppComponent);
