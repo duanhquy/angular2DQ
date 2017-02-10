@@ -5,37 +5,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 var core_1 = require("@angular/core");
 var TutorialComponent = (function () {
     function TutorialComponent() {
         this.title = "2017";
-        this.onVote = new core_1.EventEmitter();
-        this.voted = false;
+        this.today = Date.now();
+        this.pi = 3.141592;
+        this.e = 2.718281828459045;
+        this.object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
     }
-    TutorialComponent.prototype.vote = function (agr) {
-        this.voted = true;
-        this.onVote.emit(agr);
-    };
-    TutorialComponent.prototype.setName = function (arg) {
-        this.name = arg;
-    };
     return TutorialComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], TutorialComponent.prototype, "name", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], TutorialComponent.prototype, "onVote", void 0);
 TutorialComponent = __decorate([
     core_1.Component({
         selector: 'my-tutorial',
-        template: "\n            <br/>              \n              <p>Child Component is: {{name}}</p>\n              <hr/>             \n              <button [disabled] = \"voted\" (click) = \"vote(true)\">\u0110\u1ED3ng \u00FD</button>\n              <button [disabled] = \"voted\" (click) = \"vote(false)\">Kh\u00F4ng \u0111\u1ED3ng \u00FD</button>\n              Result:{{voted}}\n    "
+        template: "\n          <h2>{{title}}</h2>\n            <p>Today is {{today | date}}</p>\n    <p>Or if you prefer, {{today | date:'fullDate'}}</p>\n    <p>The time is {{today | date:'jmZ'}}</p>\n    <p>Date for VN {{today | date:'dd/MM/yyyy'}}</p>\n       <p>e (no formatting): {{e}}</p>\n    <p>e (3.1-5): {{e | number:'3.1-5'}}</p>\n    <p>pi (no formatting): {{pi}}</p>\n    <p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>\n    <br/>\n    <div>\n    <p>Without JSON pipe:</p>\n    <pre>{{object}}</pre>\n    <p>With JSON pipe:</p>\n    <pre>{{object | json}}</pre>\n  </div>\n    "
     })
 ], TutorialComponent);
 exports.TutorialComponent = TutorialComponent;
