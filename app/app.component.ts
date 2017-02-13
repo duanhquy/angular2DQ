@@ -9,14 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent { 
 
   public title = "DAQ  Education Chanel";
-  public cities = [{
-    Id: 1, Name:"Ha Noi"
-  },{
-    Id: 2, Name: "TP. Ho Chi Minh"
-  },{
-    Id : 3, Name : "Da Nang"
-  }]
-  onSubmit(value:any){
-    console.log(value);
-  }
+
 }

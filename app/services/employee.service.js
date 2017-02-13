@@ -6,18 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "DAQ  Education Chanel";
+var EmployeeService = (function () {
+    function EmployeeService() {
     }
-    return AppComponent;
+    EmployeeService.prototype.GetList = function () {
+        var arrEmp = [
+            { Id: 1, Name: "Nguyen van Hai" },
+            { Id: 2, Name: "Nguyen van B" },
+            { Id: 3, Name: "Nguyen van CHai" }
+        ];
+        return arrEmp;
+    };
+    return EmployeeService;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: 'app/app.component.html',
-        styleUrls: ['app/app.component.css']
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+EmployeeService = __decorate([
+    core_1.Injectable()
+], EmployeeService);
+exports.EmployeeService = EmployeeService;
+//# sourceMappingURL=employee.service.js.map
